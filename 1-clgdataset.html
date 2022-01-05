@@ -1,0 +1,86 @@
+
+<link rel="stylesheet" type="text/css" href="clg.css"/>
+
+<script type="text/javascript">
+	
+	document.write('<h1>Gujarat University Collage</h1>');
+	
+
+
+
+	var a = ['VADODARA','AHMEDABAD','SURAT','NAVSARI'];
+
+	var b = [
+	             ['M.S.U','SIGMA.U'],
+	             ['L.D.U','NIRMA.U','VIVEKANAND.U','R.C.M POLY'],
+	             ['SARDAR.U','GUVAHTI.U','BIRLA.U'],
+	             ['MAHATMA.U','S.S.AGRAWAL']
+	        ];
+
+	 var c = [
+	              [['Mechenical','I.T'],['I.T','Computer']],
+	              [['I.T','Computer','Aero','E.C'],['I.T','Computer'],['I.T','Com','Aero'],['I.T','Comuter']],
+	              [['Mechenical','I.T'],['I.T','Computer'],['E.C']],
+	              [['I.T','Computer'],['I.T','Computer','I.C']]
+	         ];
+
+
+	 var d = [
+	            [
+	               [['s-1','s-2','s-3','s-4'],['s-1','s-2','s-3']],
+	               [['s-1','s-2'],['s-1','s-2','s-3']]
+	             ],
+
+
+	            [
+	               [['s-1','s-2','s-3'],['s-1','s-2'],['s-1','s-2','s-3'],['s-1','s-2','s-3','s-4']],
+	               [['s-1','s-2'],['s-1','s-2','s-3']],
+	               [['s-1','s-2'],['s-1','s-2','s-3','s-4'],['s-1','s-2','s-3']],
+	               [['s-1','s-2','s-3','s-4','s-5'],['s-1','s-2','s-3']]
+	            ],
+
+	            [
+	               [['s-1','s-2'],['s-1']],
+	               [['s-1','s-2','s-3','s-4','s-5'],['s-1','s-2','s-3','s-4']],
+	               [['s-1','s-2','s-3']]
+	            ],
+
+	            [
+	               [['s-1','s-2','s-3','s-4'],['s-1','s-2']],
+	               [['s-1','s-2'],['s-1','s-2','s-3'],['s-1','s-2','s-3','s-4','s-5']]
+	            ],
+
+	         ];        
+
+
+	         for(var i=0;i<a.length;i++)
+	         {
+
+/*                   document.write('<p id="jstext">' + a[i] + '</p>');
+*/
+	         	     document.write( '<h2>CITY::::'+'*****'+a[i]+'*****</h2>' +'<br>');
+	         	     document.write('<br>');
+
+
+
+	         	    for(var j=0;j<b[i].length;j++)
+
+	         	     {
+	         	     	document.write('<h4>COLLAGE NAME::'+'---'+b[i][j]+'---</h4>'+'<br>');
+	         	     	document.write('<br>');
+
+	         	     	for(k=0;k<c[i][j].length;k++)
+	         	     	{
+	         	     		document.write('FIELD::'+c[i][j][k]+'<br>');
+
+	         	     		for(l=0;l<d[i][j][k].length;l++){
+	         	     			document.write(d[i][j][k][l]+'<br>');
+	         	     		}
+	         	     		
+	         	     		document.write("<br>");
+	         	     	}
+	         	     	document.write("<br>");
+	         	     }
+	         	     document.write("<br>");
+	         }
+</script>

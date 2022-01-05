@@ -1,0 +1,158 @@
+<script type="text/javascript">
+	
+	/*var a=[];
+	var x=[];
+
+	for(i=0;i<10;i++){
+		a[i]= prompt('enter the number:');
+	}
+     x.push(a);
+     console.log(x);*/
+
+
+
+	var a=[];
+    var n = 5;
+	for(var i=0;i<n;i++){
+		var t = prompt('enter the value of 1st array:');
+	    a.push(t);
+    }
+     
+     console.log(a);
+
+
+
+	var b=[];
+
+	for(var j=0;j<n;j++){
+		b[j]= prompt('enter the value of 2nd array:');
+	}
+     b.push(b);
+     console.log(b);
+
+
+
+  var c = [];
+
+
+     for(var i = 0;i<n;i++){
+       var o =true;
+
+       for(var j=0;j<n;j++){
+
+         if(a[i] == b[j])
+         {
+            c.push(a[i]);
+             o = false;
+            break;
+         }
+       }
+
+       
+   }
+  
+   
+
+   ////////////////////////////////////////////////////////////////////////////////////
+
+
+/*....................................a-b...................*/
+
+var d = [];
+
+   for(var k = 0; k < n; k++)
+   {
+          var o = true;
+
+          for(var l = 0; l < n ; l++)
+          {
+               if(a[k] == b[l]){
+                   o = false;
+                   break;
+               }
+          }
+
+          if(o == true){
+
+              d.push(a[k]);
+          }
+        
+   }
+/*document.write(d + "<br>");*/
+   /*...............................b-a.................................*/
+var e = [];
+    for(var  j = 0; j < n ; j++)
+   {
+          var o = true;
+
+          for(var i = 0; i < n ; i++)
+          {
+               if(b[j] == a[i]){
+                   o = false;
+                   break;
+               }
+          }
+
+          if(o == true){
+             e.push(b[j]);
+          }
+        
+   }
+
+ /*  document.write(e+ "<br>");*/
+
+   /*................................a -  U - b....................................*/
+
+
+var f = [];
+
+
+   for(var i = 0; i< n;i++)
+  {
+               f.push(a[i]);
+  }
+
+  for(var j = 0 ; j < n; j++)
+  {
+          var  o =true;
+
+          for(var i = 0; i < n ; i++)
+          {
+              if(b[j] == a[i]){
+                   o = false;
+                   break;
+              }
+          }
+
+        if( o == true)
+        {
+            f.push(b[j]);
+        }
+  }
+  /*document.write(f+ "<br>");*/
+
+
+
+var popup = prompt("enter the condition number 1.  A   ==  B   2. A  -  B    3.B  -  A 4.A youg B hear:");
+
+if(popup == 1)
+{
+   alert("A   ==  B hear :  " + c);
+}
+
+else if(popup == 2)
+{
+	alert("A  -  B hear :  " + d);
+}
+
+else if(popup == 3)
+{
+	alert("B  -  A hear:  " + e);
+}
+
+else if(popup == 4)
+{
+	alert("A youg B hear: " +  f);
+}
+
+</script>

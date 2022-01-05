@@ -1,0 +1,428 @@
+<script type="text/javascript">
+	var flag = true;
+	var profile = [];
+
+	do{
+		var t = checkNumber('1.INSERT 2.VIEW 3.SEARCH 4.DELETE 5.UPDATE 6.EXIT. Enter Choice::');
+		switch(t)
+		{
+			case 1:
+				insert();
+			break;
+			case 2:
+				display();
+			break;s
+			case 3:
+				search();
+			break;
+
+			case 4:
+			   deltethe();
+			break;
+
+			case 5:
+			   updated();
+			break;
+
+			case 6:
+				Exit();
+			break;
+		}
+
+	}
+	while(flag);
+
+//..........DISPLAY............//
+
+	function display() {
+		for(var i=0;i<profile.length;i++)
+		{
+			alert('Your Name ='+ profile[i]['Name']+ ' - ' +'Your ID ='+ profile[i]['id']+ ' - '+ 'Your Mobile NUmber =' + profile[i]['mobile']);
+		}
+	}
+
+//..............INSERT.............//
+
+	function insert(){
+		var p = checkNumber('How many profile you want to create?');
+		for(var i = 0;i<p;i++)
+		{   var z = checkName('Enter Name ::','Name');
+			var x = checkNumberInArray('Enter Id::','id');
+			var y = checkmobileNumberInArray('Enter Mobie Number::','mobile');
+			
+			var tt = { 'Name' :z ,'id':x,'mobile':y ,};
+			profile.push(tt);
+		}
+	}
+
+//............checkname............................//
+
+function checkName(arg)
+{
+    var nameR =  /^[A-Za-z\s]+$/;
+    var k = 0;
+		var flag = true;
+		do{
+			 k = prompt(arg);
+			if(nameR.test(k))
+			{
+				flag = false;
+			}
+			else{
+				alert('Please Enter Proper Name!!');
+			}
+		}
+		while(flag);
+
+		return (k);
+
+
+}	
+
+//..............CHEACK NUMBERIN ARRY.............//
+
+	function checkNumberInArray(arg,argt) {
+		var flag = true;
+		var d = 0;
+		do{
+			flag = false;
+			d = checkNumber(arg);
+			for(var i = 0;i<profile.length;i++)
+			{
+				if(d == profile[i][argt])
+				{
+					flag = true;
+					break;
+				}
+			}
+			if (flag == true) {
+				alert('This '+argt+' is already exists!');
+			}
+		}
+		while(flag);
+		return d;
+	}
+//...............chekmobilenumber....................//
+
+function checkmobileNumberInArray(arg,argt) 
+{
+/*
+	var flag = true;
+		var d = 0;
+		do{
+			flag = false;
+			d = checkNumber(arg);
+			for(var i = 0;i<profile.length;i++)
+			{
+				if(d == profile[i][argt])
+				{
+					flag = true;
+					break;
+				}
+			}
+			if (flag == true) {
+				alert('This '+argt+' is already exists!');
+			}
+		}
+		while(flag);
+		return d;*/
+
+
+	var flag = true;
+		var d = 0;
+		do{
+			flag = false;
+			
+			d = checkNumber1(arg);
+
+
+			while(d.length == 10 || d.length != 10 || d == '')
+			{
+
+				         if(d.length == 10)
+				         {
+
+                            for(var i = 0;i<profile.length;i++)
+			              {
+
+				                   if(d == profile[i][argt] )
+				                    {
+				      	            flag = true;
+				      	            break;
+				                    }
+			               }
+
+			             if (flag == true) 
+			              {
+			               	alert('This '+argt+' is already exists!');
+			              }
+
+
+                            falge = true;
+                            break;
+				         }
+          
+                   else 
+               {
+
+				         alert("please re-enter the number....");
+				         var d = 0 ;
+				         d = checkNumber1(arg);
+
+
+                     if(d.length == 10 )
+                     {
+
+				         for(var i = 0;i<profile.length;i++)
+			              {
+
+				                   if(d == profile[i][argt] )
+				                    {
+				      	            flag = true;
+				      	            break;
+				                    }
+			               }
+
+			             if (flag == true) 
+			              {
+			               	alert('This '+argt+' is already exists!');
+			              }
+
+                      }
+
+			  
+                  }
+
+            }
+			
+		}
+		while(flag);
+		return d;
+
+}		
+
+//..............CHECk NUMBER................//
+
+	function checkNumber(arg)
+	{
+		var regex = /^[0-9\s]*$/;
+		var a = 0;
+		var flag = true;
+		do{
+			a = prompt(arg);
+			if(regex.test(a))
+			{
+				flag = false;
+			}
+			else{
+				alert('Plz Enter Only allow Number!');
+			}
+		}
+		while(flag);
+
+		return parseInt(a);
+	}
+
+
+//..............CHECk NUMBER 1................//
+
+	function checkNumber1(arg)
+	{
+		var regex = /^[0-9\s]*$/;
+		var a = 0;
+		var flag = true;
+		do{
+			a = prompt(arg);
+			if(regex.test(a))
+			{
+				flag = false;
+			}
+			else{
+				alert('Plz Enter Only allow Number!');
+			}
+		}
+		while(flag);
+
+		return a;
+	}
+
+//.................SEARCH...................//
+
+function search()
+{
+	var searchNumber = checkNumber('Enter The search ID ::');
+	for( var search = 0 ; search<profile.length ; search++)
+	{
+		if(searchNumber == profile[search]['id'])
+		{
+			alert('Your ID IS ='+ profile[search]['Name'] +' , '+'Your ID IS ='+profile[search]['id']+' & '+'Your mobile number is ='+ profile[search]['mobile']);
+			break;
+		}
+		
+	}
+	if(searchNumber != profile[search]['id'])
+	 {
+	 	alert('your data is not hear.. !!');
+	 }
+}	
+ //...............exit..................//
+
+ function Exit()
+ {
+ 	var GB = checkNumber('are you sure you want to Exit !! 1.Yes 2.No');
+
+ 	switch(GB)
+ 	{
+ 		case 1:
+ 		 alert('Good By Thank You Yarr!!');
+ 		
+
+ 		break;
+
+ 		case 2:
+ 		 	alert('okey please continue!!');
+
+ 		break;
+ 	}
+ 	if(GB == 1)
+ 	{
+ 		flag =false ;
+ 	}
+ }
+ 	
+//................delete................................//
+
+function deltethe(arg)
+{
+var delte = checkNumber1("enter your delte id no:::...");
+
+         var removed,jk,hj;
+         for(var u = 0;u<profile.length;u++)
+
+         {
+         	
+		     jk = profile['id'].indexOf(delte);
+		   
+		   //alert("jk value is::"+ jk);
+  
+           var  hj = prompt("are you sure you delted"+' '+"no of id:"+delte +'  '+"1.yes 2.no");
+
+           if(hj == 1)
+           { 
+      
+              removed  = profile['Name'].splice(jk,1);
+              removed  = profile['id'].splice(jk,1);
+              removed =  profile['mobile'].splice(jk,1); 
+
+         alert(delte +' '+ "no of id can be delteddddd..");
+          }
+
+          else
+          {
+          	alert("ok as your wise...");
+          }
+
+      }
+
+   } 
+
+
+   /*................................update..........................*/
+
+   function updated()
+   {
+   	var updt = checkNumber1("enter the id for update::");
+   	var up = -1;
+
+   	for(var t=0; t<profile.length; t++)
+   	{
+   		if(updt == profile[t]['id'])
+   			{
+               up = t;
+   				break;
+   			}
+   	}
+
+   	if(up != -1)
+   	{
+   		alert("you chose update id number is:" + profile[t]['id']);
+
+   		var x = checkNumber("1.NAME 2.NUMBER please enter your choice update:::");
+   		
+   		switch(x)
+   		{
+
+   			case 1:
+
+   			var upflage = true;
+
+   			do
+   			{
+   				 var ty=true;
+   				 var tn = checkName("enter the new name..");
+
+   				 while(tn == profile[t]['Name'])
+   				 {
+   				 	alert("This name is already exit");
+   				 	tn = checkName("re-enter the different name");
+
+   				 	if(tn != profile[t]['Name'])
+   				 	{
+   				 		profile[t]['Name'] = tn;
+   				 		ty = false;
+   				 		break;
+   				 	}
+   				 }
+
+
+               profile[t]['Name'] = tn;  
+               upflage = false;
+   			}
+   			while(upflage);
+
+   			alert("the name is update::");
+
+   			break;
+
+
+   			case 2:
+
+
+   			var upflage = true;
+
+   			do
+   			{
+   				 var ty=true;
+   				 var tn = checkNumber("enter the new number..");
+
+   				 while(tn == profile[t]['mobile'])
+   				 {
+   				 	alert("This name is already exit");
+   				 	tn = checkNumber("re-enter the different number");
+
+   				 	if(tn != profile[t]['mobile'])
+   				 	{
+   				 		profile[t]['mobile'] = tn;
+   				 		ty = false;
+   				 		break;
+   				 	}
+   				 }
+
+
+               profile[t]['mobile'] = tn;  
+               upflage = false;
+   			}
+   			while(upflage);
+
+   			alert("the number is update::");
+
+   			break;
+   		}
+
+   	}
+
+
+   
+   }      
+
+</script>

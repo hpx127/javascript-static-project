@@ -1,0 +1,556 @@
+<script type="text/javascript">
+	var globle1 = 0 ;
+	
+    var datas = [];
+    var trans = [];
+    
+    var statflage = true;
+    alert(".............WEL-COME TO PUBLIC BANK.................")
+    do{
+
+    	var main = parseInt(prompt('1.USERSIDE 2. ADMIN SIDE 3.EXIT'));
+
+	switch(main)
+	{
+
+		/*...........................user side............................*/
+		case 1 :
+		   alert('welcome to userside!!');
+		   var custflage = true;
+
+		   
+		            	var nameR = '';
+		            	var numbeR = '';
+		            	var gidR = '';
+		            	var pass = '';
+		            	var accNO = '';
+		            	var balanceR = 0;
+
+		            	var nameT = '';
+		            	var balT = 0;
+		           
+
+		   do{
+
+		   	   var profile = parseInt(prompt('1.Registration 2.Login 3.Exit'));
+
+		   	switch(profile)
+		   	{
+		   		case 1:
+		   		 alert('please enter youre Data to Registration !!');
+ 					
+ 					/*var gb = true;
+ 					do{*/
+ 					var nameR = prompt(' enter your name....!!!!!.');
+
+                           while(nameR == '')
+                           {
+                           		alert('please enter the name first !!');
+                             		var nameR = prompt('Enter the Name::');
+                             
+                           }
+
+                             /*ux.push(nameR);*/
+                             /*gb = false;*/
+                     /*}*/
+                     /*while(true);*/
+                          
+
+                           
+
+                    var numbeR = prompt(' enter your mobile number.....');
+
+                           while(numbeR == '')
+                           {
+                           		alert('please enter the number first !!');
+                             	var numbeR = prompt('Enter the number::');	
+                           }
+                           /*ux.push(numbeR);*/
+
+                    
+                    var gidR = prompt(' enter your gmail id.....');
+
+                           while(gidR == '')
+                           {
+                           		alert('please enter the gmail id !!');
+                             		var gidR = prompt('Enter the gmail id::');	
+                           }
+                           /*ux.push(gidR);
+*/                     
+
+                          alert('craete your passwaord:');
+                           
+                            var pass = prompt('enter your password');
+                            
+                            /*while(pass.length > 0 || pass.length <= 5)
+                            {
+                            	alert('your password is week...!');
+                            	var pass = prompt('re-enter your password');
+                            	if(pass.length >= 6)
+                            	{
+                            		datas.push(pass);
+                            	}*/
+                            	      
+                            /*}*/
+                            
+
+                              
+                             
+	                    /*  ux.push(pass);*/
+
+
+
+	                      alert("THANK YOU FOR REGISTRATION, YOUR ACCOUNT NUMBER GENRATRE...");
+
+	                      var acc = '0123456789';
+	                      var accNO = '';
+
+	                      for(var j=0;j<12;j++)
+	                      {
+	                      	accNO += acc.charAt(Math.floor(Math.random()* acc.length));
+	                      }
+                           alert("YOUR ACCOUNT NUMBER IS:"+ accNO);
+	                    /*  ux.push(c);*/
+
+
+                      
+	                     /*var tt = {"name":[nameR],"number":[numbeR],"g_id":[gidR],"password":[pass],"Account.no":[c]};
+
+	                     datas.push(tt);*/
+                
+	                     var ux= {
+		            	"name":nameR,
+		            	"number":numbeR,
+		            	"g_id":gidR,
+		            	"password":pass,
+		            	"Account.no":accNO,
+		            	 "Balance" : balanceR
+		            	
+		                  };
+		                  datas.push(ux);
+
+		                  
+
+                            
+		                 
+	                     
+
+	                     for(var i=0;i<datas.length;i++)
+	                     {
+	                     	
+	                     	alert("YOUR NAME:"+'-'+datas[i]['name']+'\n'+"YOUR MO.NUMBER:"+'-'+datas[i]['number']+'\n'+"YOUR GMAIL:"+'-'+datas[i]['g_id']+'\n'+"YOUR PASSWORD:"+'-'+datas[i]['password']+'\n'+"YOUR ACCOUNT NO:"+'-'+datas[i]['Account.no']+'\n'+"YOUR CURRENT BALANCE:"+'-'+datas[i]['Balance']);
+
+	                     	
+	                     	   nameT = datas[i]['name'];
+	                     	   uy = nameT;
+	                     	   trans.push(uy);
+	                           
+	                             balT = datas[i]['Balance'];
+	                             uy = balT;
+                                 trans.push(uy);
+
+	                     }
+
+                       
+	             break ;
+
+		   		case 2:
+
+             alert("..................WEL-COME...TO-LOGIN.......................");
+
+             var nameR1 = prompt("enter your name");
+
+             var passR1 = prompt("enter your password:");
+             var hk = true;
+                for(var i = 0 ; i<datas.length;i++)
+               {
+
+               	while(nameR1 == datas[i]['name'] && passR1 == datas[i]['password'])
+                {
+                    alert('yeyeyey');
+                	alert("YOUR NAME:"+'-'+datas[i]['name']+'\n'+"YOUR MO.NUMBER:"+'-'+datas[i]['number']+'\n'+"YOUR GMAIL:"+'-'+datas[i]['g_id']+'\n'+"YOUR PASSWORD:"+'-'+datas[i]['password']+'\n'+"YOUR ACCOUNT NO:"+'-'+datas[i]['Account.no']+'\n'+"YOUR CURRENT BALANCE:"+'-'+datas[i]['Balance']);
+                         
+                      
+                         var mlag = true;
+               do
+               {
+                var xd = parseInt(prompt("1.DEPOSITE  2.WITHDROW 3.EXIT : YOUR MONEY.."));
+
+                         switch(xd)
+                         {
+                         	case 1:
+                         	alert("DEPOSITE your money..$$$");
+
+                         	var addM = parseInt(prompt("how much money you deposite..?"));
+
+                         	    datas[i]['Balance'] = datas[i]['Balance'] + addM;
+
+                                
+	                     	      nameT = datas[i]['name'];
+	                     	      uy = nameT;
+	                     	      trans.push(uy);
+	                            
+	                               balT = addM;
+	                               uy = balT;
+                                  trans.push(uy);
+                         	break;
+
+                         	case 2:
+                         	alert("WITHDROW  your money..$$$");
+                         	var remvM = parseInt(prompt("how much money you withdrow..?"));
+
+                         	 if(remvM <= datas[i]['Balance'])
+                         	   {
+                         	   	
+                         	 	 datas[i]['Balance'] = datas[i]['Balance'] - remvM; 
+                               
+	                     	    nameT = datas[i]['name'];
+	                     	   uy = nameT;
+	                     	   trans.push(uy);
+	                           
+	                             balT = remvM;
+	                             uy = balT;
+                                 trans.push(uy);
+                         	    }
+
+                         	 else if( remvM >= datas[i]['Balance'])
+                         	 {
+                         	 	alert("Soory sir your current balance is:"+ datas[i]['Balance'] +"so you cannot withdrow..!" );
+                         	 	var remvM = parseInt(prompt("your balance limit"+datas[i]['Balance']+"so you take money under the limit withdrow..?"));
+
+                                if( remvM <= datas[i]['Balance'])
+                         	   {
+                         	 	 datas[i]['Balance'] = datas[i]['Balance'] - remvM; 
+                                
+	                     	        nameT = datas[i]['name'];
+	                     	   uy = nameT;
+	                     	   trans.push(uy);
+	                           
+	                             balT = remvM;
+	                             uy = balT;
+                                 trans.push(uy);
+                         	    
+                         	    }
+
+                         	 }
+
+                         	 else if(datas[i]['Balance'] == 0)
+                         	 {
+                         	 	alert("please first deposite your balance because your balance is zero ");
+                         	 }
+
+                         	break;
+
+                         	case 3:
+                         	 alert("THANK YOU FOR MONEY HEIST..");
+                              mlag = false;
+                         	break;
+                         }
+
+                       }
+                       while(mlag);
+                        alert("YOUR NAME:"+'-'+datas[i]['name']+'\n'+"YOUR MO.NUMBER:"+'-'+datas[i]['number']+'\n'+"YOUR GMAIL:"+'-'+datas[i]['g_id']+'\n'+"YOUR PASSWORD:"+'-'+datas[i]['password']+'\n'+"YOUR ACCOUNT NO:"+'-'+datas[i]['Account.no']+'\n'+"YOUR CURRENT BALANCE:"+'-'+datas[i]['Balance']);
+                         
+	                     	  nameT = datas[i]['name'];
+	                     	   uy = nameT;
+	                     	   trans.push(uy);
+	                           
+	                             balT = datas[i]['Balance'];
+	                             uy = balT;
+                                 trans.push(uy);
+                         	    
+
+                         break;//while no break 6e
+                }
+               	
+                while(nameR1 == datas[i]['name'] && passR1 != datas[i]['password'])
+                {
+                	var plag = true;
+                	do{
+
+                         alert("Enter you WRONG PASSWORD");
+                        var passR1 = prompt("Re-enter your password:");
+
+                	    if(nameR1 == datas[i]['name'] && passR1 == datas[i]['password'])
+                	    {
+                         alert('yoyoyo');
+                		alert("YOUR NAME:"+'-'+datas[i]['name']+'\n'+"YOUR MO.NUMBER:"+'-'+datas[i]['number']+'\n'+"YOUR GMAIL:"+'-'+datas[i]['g_id']+'\n'+"YOUR PASSWORD:"+'-'+datas[i]['password']+'\n'+"YOUR ACCOUNT NO:"+'-'+datas[i]['Account.no']+'\n'+"YOUR CURRENT BALANCE:"+'-'+datas[i]['Balance']);
+
+
+                		var mlag = true;
+               do
+               {
+                var xd = parseInt(prompt("1.DEPOSITE  2.WITHDROW 3.EXIT : YOUR MONEY.."));
+
+                         switch(xd)
+                         {
+                         	case 1:
+                         	alert("DEPOSITE your money..$$$");
+
+                         	var addM = parseInt(prompt("how much money you deposite..?"));
+
+                         	    datas[i]['Balance'] = datas[i]['Balance'] + addM;
+                         	break;
+
+                         	case 2:
+                         	alert("WITHDROW  your money..$$$");
+                         	var remvM = parseInt(prompt("how much money you withdrow..?"));
+
+                         	 if(remvM <= datas[i]['Balance'])
+                         	   {
+                         	   	
+                         	 	 datas[i]['Balance'] = datas[i]['Balance'] - remvM; 
+                         	    }
+
+                         	 else if( remvM >= datas[i]['Balance'])
+                         	 {
+                         	 	alert("Soory sir your current balance is:"+ datas[i]['Balance'] +"so you cannot withdrow..!" );
+                         	 	var remvM = parseInt(prompt("your balance limit"+datas[i]['Balance']+"so you take money under the limit withdrow..?"));
+
+                                if( remvM <= datas[i]['Balance'])
+                         	   {
+                         	 	 datas[i]['Balance'] = datas[i]['Balance'] - remvM; 
+                         	    }
+
+                         	 }
+
+                         	 else if(datas[i]['Balance'] == 0)
+                         	 {
+                         	 	alert("please first deposite your balance because your balance is zero ");
+                         	 }
+
+                         	break;
+
+                         	case 3:
+                         	 alert("THANK YOU FOR MONEY HEIST..");
+                              mlag = false;
+                         	break;
+                         }
+
+                       }
+                       while(mlag);
+                        alert("YOUR NAME:"+'-'+datas[i]['name']+'\n'+"YOUR MO.NUMBER:"+'-'+datas[i]['number']+'\n'+"YOUR GMAIL:"+'-'+datas[i]['g_id']+'\n'+"YOUR PASSWORD:"+'-'+datas[i]['password']+'\n'+"YOUR ACCOUNT NO:"+'-'+datas[i]['Account.no']+'\n'+"YOUR CURRENT BALANCE:"+'-'+datas[i]['Balance']);
+                             
+                            nameT = datas[i]['name'];
+	                     	   uy = nameT;
+	                     	   trans.push(uy);
+	                           
+	                             balT = datas[i]['Balance'];
+	                             uy = balT;
+                                 trans.push(uy);
+                         	    
+
+                		plag = false;
+                		break;
+
+                	   }
+                	
+                    }
+
+                	while(plag);
+
+                	hk =false;
+                	break;
+                }
+                
+                /*var mlag = true;
+               do
+               {
+                var xd = parseInt(prompt("1.DEPOSITE  2.WITHDROW 3.EXIT : YOUR MONEY.."));
+
+                         switch(xd)
+                         {
+                         	case 1:
+                         	alert("DEPOSITE your money..$$$");
+
+                         	var addM = parseInt(prompt("how much money you deposite..?"));
+
+                         	    datas[i]['Balance'] = datas[i]['Balance'] + addM;
+                         	break;
+
+                         	case 2:
+                         	alert("WITHDROW  your money..$$$");
+                         	var remvM = parseInt(prompt("how much money you withdrow..?"));
+
+                         	 if(remvM <= datas[i]['Balance'])
+                         	   {
+                         	   	
+                         	 	 datas[i]['Balance'] = datas[i]['Balance'] - remvM; 
+                         	    }
+
+                         	 else if( remvM >= datas[i]['Balance'])
+                         	 {
+                         	 	alert("Soory sir your current balance is:"+ datas[i]['Balance'] +"so you cannot withdrow..!" );
+                         	 	var remvM = parseInt(prompt("your balance limit"+datas[i]['Balance']+"so you take money under the limit withdrow..?"));
+
+                                if( remvM <= datas[i]['Balance'])
+                         	   {
+                         	 	 datas[i]['Balance'] = datas[i]['Balance'] - remvM; 
+                         	    }
+
+                         	 }
+
+                         	 else if(datas[i]['Balance'] == 0)
+                         	 {
+                         	 	alert("please first deposite your balance because your balance is zero ");
+                         	 }
+
+                         	break;
+
+                         	case 3:
+                         	 alert("THANK YOU FOR MONEY HEIST..");
+                              mlag = false;
+                         	break;
+                         }
+
+                       }
+                       while(mlag);
+                        alert("YOUR NAME:"+'-'+datas[i]['name']+'\n'+"YOUR MO.NUMBER:"+'-'+datas[i]['number']+'\n'+"YOUR GMAIL:"+'-'+datas[i]['g_id']+'\n'+"YOUR PASSWORD:"+'-'+datas[i]['password']+'\n'+"YOUR ACCOUNT NO:"+'-'+datas[i]['Account.no']+'\n'+"YOUR CURRENT BALANCE:"+'-'+datas[i]['Balance']);
+*/
+                
+		   		var uy = {
+                                      "name1" : nameT,
+                                      "Balance1": balT
+		                           };
+
+		                           trans.push(uy);
+
+   
+               }	  
+
+             	 
+
+                  
+		   		break ;
+
+		   		case 3:
+
+
+		   		alert("THANK YOU...STORE YOUR DATA SAFELLLYYYY....");
+		   		custflage = false;
+		   		break ;
+		   	}
+
+		 /*  	var cf = parseInt(prompt("do you enter other performance 1.yes 2.no:"));
+
+          if(cf != 1)
+          {
+		   	    custflage = false;
+		   	  }*/
+
+
+		   }
+		   while(custflage);
+		break ;
+/*................................admin side....................................*/
+		case 2 :
+
+		  alert("................WEL-COME TO ADMIN SIDE..................");
+
+		  var adname = 'harshit patel';
+		  var adpass = '12345';
+
+		  var adn = prompt("enter your Name admin..");
+		  var adp = prompt("enter your password..");
+		  while(adn == adname && adp != adpass)
+		  {
+              alert("please re-enter your password");
+              var adp = prompt("enter your password..");
+		  }
+
+		  while(adn != adname && adp != adpass)
+		  {
+              alert("please re-enter your name and  password");
+             var adn = prompt("enter your Name admin.."); 
+              var adp = prompt("enter your password..");
+		  }
+         
+          var adflag = true;
+          do
+          {
+
+		  var adswitch = parseInt(prompt("1.USER DATA 2.USER TRANSECTION DATA 3.EXIT"));
+
+		      switch(adswitch)
+		      {
+		      	  case 1:
+		      	  alert("USER DATA are hear..................");
+
+		      	  for(var i=0;i<datas.length;i++)
+	                     {
+	                     	
+	                     	alert("YOUR NAME:"+'-'+datas[i]['name']+'\n'+"YOUR MO.NUMBER:"+'-'+datas[i]['number']+'\n'+"YOUR GMAIL:"+'-'+datas[i]['g_id']+'\n'+"YOUR ACCOUNT NO:"+'-'+datas[i]['Account.no']+'\n'+"YOUR CURRENT BALANCE:"+'-'+datas[i]['Balance']);
+	                         
+	                     }
+
+
+		      	  break;
+
+		      	  case 2:
+
+		      	  alert("USER TRANSECTION DETAILS......");
+		      	  ufalg = true;
+                  do
+                  {
+
+                  	
+		      	
+		   		var uy = {
+                                      "name1" : nameT,
+                                      "Balance1": balT
+		                           };
+
+		                           trans.push(uy);
+
+		      	  for(var io=0;io<trans.length ;io++)
+		           {
+		           	  
+			            alert("name of:"+trans[io]['name1']+"\n"+"balnce of:"+trans[io]['Balance1']);
+		            }
+
+		            if(io == trans.length)
+		            {
+		            	uflag = false;
+		            	break;
+		            }
+
+		        }
+
+		        while(uflag);
+
+		      	  break;
+
+		      	  case 3:
+		      	  alert("THANK YOU ADMIN SEE YOU TOMORROW");
+		      	  adflag = false;
+		      	  break;
+
+		      }
+         
+          }
+          while(adflag);
+
+
+		
+		break ;
+/*.................................EXIT..........................................*/
+		case 3 :
+		alert('SHHHUT-DOWN YOURRR BANK.....GOOD BYE');
+		statflage = false;
+		break ;
+	}
+
+
+
+
+	   }
+	   while(statflage);    
+
+
+
+</script>
+
+<!-- for(var j =0;j<zero_bal.length;j++)
+		{
+			alert("zero data:"+zero_bal[j]);
+		} -->
